@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>PROFILE | VVYRA WORLD</title>
+  <link rel="preload" href="./assets/fonts/BankGothic-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body data-page="profile">
+  <header class="siteHeader" data-site-header>
+    <a class="brandMark" href="./index.html" aria-label="VVYRA WORLD">
+      <img src="./assets/images/LogoWeb.png" alt="VVYRA">
+    </a>
+    <nav class="primaryNav" aria-label="PRIMARY">
+      <a href="./profile.html" data-nav-page="profile" data-i18n="nav.profile">PROFILE</a>
+      <a href="./discography.html" data-nav-page="discography" data-i18n="nav.discography">DISCOGRAPHY</a>
+      <a href="./videos.html" data-nav-page="videos" data-i18n="nav.videos">VIDEOS</a>
+      <a class="externalLink" href="./shop.html" aria-label="SHOP EXTERNAL"><span data-i18n="nav.shop">SHOP</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.41l-7.29 7.3-1.42-1.42 7.3-7.29H5V3Z"/></svg></a>
+      <a class="externalLink" href="./live.html" aria-label="LIVE EXTERNAL"><span data-i18n="nav.live">LIVE</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.41l-7.29 7.3-1.42-1.42 7.3-7.29H5V3Z"/></svg></a>
+    </nav>
+    <div class="languageSelector">
+      <button class="languageToggle" type="button" aria-expanded="false" aria-controls="languageMenu" data-language-toggle>KOR</button>
+      <div class="languageMenu" id="languageMenu" role="menu" data-language-menu>
+        <button type="button" role="menuitem" data-language="ko">KOREAN</button>
+        <button type="button" role="menuitem" data-language="en">ENGLISH</button>
+        <button type="button" role="menuitem" data-language="ja">JAPANESE</button>
+        <button type="button" role="menuitem" data-language="zh">CHINESE</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="statementBanner" data-statement-banner>
+    <a class="externalLink" href="https://x.com/SOS_CORPORATION/status/2068314888284279056" target="_blank" rel="noopener noreferrer">
+      <span data-i18n="statement.ceo">READ THE STATEMENT FROM CEO MING PARK-JEONG</span>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.41l-7.29 7.3-1.42-1.42 7.3-7.29H5V3Z"/></svg>
+    </a>
+    <button class="statementDismiss" type="button" aria-label="DISMISS STATEMENT" data-statement-dismiss>X</button>
+  </div>
+
+  <main class="pageShell">
+    <section class="pageHero">
+      <h1 data-i18n="profile.title">PROFILE</h1>
+    </section>
+    <section class="placeholderPanel">
+      <p data-i18n="profile.body">PROFILE CONTENT TEMPLATE READY FOR BIOGRAPHY, ARTIST STATEMENT, CREDITS, PRESS LINKS, AND OFFICIAL IMAGERY.</p>
+    </section>
+  </main>
+
+  <footer class="siteFooter">
+    <p class="footerCopyright"><img src="./assets/images/logoy.png" alt="SOS"><span data-i18n="footer.copyright">&copy; SOS CORPORATION. ALL RIGHTS RESERVED</span></p>
+    <nav aria-label="LEGAL"><a href="./terms.html" data-i18n="footer.terms">TERMS OF SERVICE</a><span>|</span><a href="./privacy.html" data-i18n="footer.privacy">PRIVACY POLICY</a></nav>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

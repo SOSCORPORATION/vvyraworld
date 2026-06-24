@@ -3,11 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My website</title>
+  <meta name="theme-color" content="#000000">
+  <title>VVYRA WORLD</title>
+  <link rel="preload" href="./assets/fonts/BankGothic-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/images/LogoWeb.png" as="image">
+  <link rel="preload" href="./assets/images/naegalogooo.png" as="image">
   <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-  <h1>Hello, world!</h1>
-  <p>My website is hosted with GitHub Pages.</p>
+<body data-page="home">
+  <header class="siteHeader" data-site-header>
+    <a class="brandMark" href="./index.html" aria-label="VVYRA WORLD">
+      <img src="./assets/images/LogoWeb.png" alt="VVYRA">
+    </a>
+    <nav class="primaryNav" aria-label="PRIMARY">
+      <a href="./profile.html" data-i18n="nav.profile">PROFILE</a>
+      <a href="./discography.html" data-i18n="nav.discography">DISCOGRAPHY</a>
+      <a href="./videos.html" data-i18n="nav.videos">VIDEOS</a>
+      <a class="externalLink" href="./shop.html" aria-label="SHOP EXTERNAL">
+        <span data-i18n="nav.shop">SHOP</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.41l-7.29 7.3-1.42-1.42 7.3-7.29H5V3Z"/></svg>
+      </a>
+      <a class="externalLink" href="./live.html" aria-label="LIVE EXTERNAL">
+        <span data-i18n="nav.live">LIVE</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.41l-7.29 7.3-1.42-1.42 7.3-7.29H5V3Z"/></svg>
+      </a>
+    </nav>
+    <div class="languageSelector">
+      <button class="languageToggle" type="button" aria-expanded="false" aria-controls="languageMenu" data-language-toggle>KOR</button>
+      <div class="languageMenu" id="languageMenu" role="menu" data-language-menu>
+        <button type="button" role="menuitem" data-language="ko">KOREAN</button>
+        <button type="button" role="menuitem" data-language="en">ENGLISH</button>
+        <button type="button" role="menuitem" data-language="ja">JAPANESE</button>
+        <button type="button" role="menuitem" data-language="zh">CHINESE</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="statementBanner" data-statement-banner>
+    <a class="externalLink" href="https://x.com/SOS_CORPORATION/status/2068314888284279056" target="_blank" rel="noopener noreferrer">
+      <span data-i18n="statement.ceo">READ THE STATEMENT FROM CEO MING PARK-JEONG</span>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.41l-7.29 7.3-1.42-1.42 7.3-7.29H5V3Z"/></svg>
+    </a>
+    <button class="statementDismiss" type="button" aria-label="DISMISS STATEMENT" data-statement-dismiss>X</button>
+  </div>
+
+  <main>
+    <section class="heroSection">
+      <video class="heroVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="./assets/media/0622-1-1.mp4" type="video/mp4">
+      </video>
+      <div class="heroContent">
+        <img class="heroLogo" src="./assets/images/naegalogooo.png" alt="NAEGA">
+        <p class="debutText" data-i18n="home.body">THE DEBUT SINGLE</p>
+        <div class="actionRow">
+          <a class="primaryButton externalLink" href="https://too.fm/wgj67kj">
+            <span data-i18n="home.primary">PRESAVE NOW</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.41l-7.29 7.3-1.42-1.42 7.3-7.29H5V3Z"/></svg>
+          </a>
+          <a class="secondaryButton externalLink" href="https://www.youtube.com/watch?v=zBJIIvhdLgs">
+            <span data-i18n="home.secondary">WATCH THE TEASER</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.41l-7.29 7.3-1.42-1.42 7.3-7.29H5V3Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="scrollBanner" aria-label="WELCOME TO VVYRA WORLD">
+      <div class="scrollTrack">
+        <span>WELCOME TO VVYRA WORLD</span>
+        <span>WELCOME TO VVYRA WORLD</span>
+        <span>WELCOME TO VVYRA WORLD</span>
+        <span>WELCOME TO VVYRA WORLD</span>
+        <span>WELCOME TO VVYRA WORLD</span>
+        <span>WELCOME TO VVYRA WORLD</span>
+      </div>
+    </section>
+
+    <section class="indexGrid" aria-label="SITE INDEX">
+      <a class="indexTile" href="./profile.html">
+        <span data-i18n="nav.profile">PROFILE</span>
+        <strong data-i18n="home.profileMeta">ARTIST INFORMATION</strong>
+      </a>
+      <a class="indexTile" href="./discography.html">
+        <span data-i18n="nav.discography">DISCOGRAPHY</span>
+        <strong data-i18n="home.discographyMeta">RELEASE ARCHIVE</strong>
+      </a>
+      <a class="indexTile" href="./videos.html">
+        <span data-i18n="nav.videos">VIDEOS</span>
+        <strong data-i18n="home.videosMeta">VISUAL CATALOG</strong>
+      </a>
+    </section>
+  </main>
+
+  <footer class="siteFooter">
+    <p class="footerCopyright"><img src="./assets/images/logoy.png" alt="SOS"><span data-i18n="footer.copyright">&copy; SOS CORPORATION. ALL RIGHTS RESERVED</span></p>
+    <nav aria-label="LEGAL">
+      <a href="./terms.html" data-i18n="footer.terms">TERMS OF SERVICE</a>
+      <span>|</span>
+      <a href="./privacy.html" data-i18n="footer.privacy">PRIVACY POLICY</a>
+    </nav>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
