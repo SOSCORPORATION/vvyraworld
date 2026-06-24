@@ -55,6 +55,20 @@ body::before {
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 78%);
 }
 
+body[data-page="home"] {
+  display: flex;
+  height: 100vh;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+body[data-page="home"] main {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -70,8 +84,9 @@ button {
   top: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
+  column-gap: clamp(12px, 1.6vw, 22px);
   min-height: 76px;
   padding: 0 clamp(18px, 4vw, 56px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -81,6 +96,7 @@ button {
 
 .brandMark,
 .primaryNav,
+.socialNav,
 .languageSelector {
   font-family: var(--headerFont);
 }
@@ -164,6 +180,36 @@ button {
 
 .externalLink:hover svg {
   transform: translate(2px, -2px);
+}
+
+.socialNav {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  gap: 8px;
+}
+
+.socialNav a {
+  display: inline-grid;
+  width: 28px;
+  height: 34px;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.socialNav a:hover,
+.socialNav a:focus-visible {
+  color: var(--white);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.socialNav svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
 }
 
 .languageSelector {
@@ -295,8 +341,10 @@ button {
 .heroSection {
   position: relative;
   display: grid;
+  width: 100%;
+  flex: 1 1 auto;
   place-items: center;
-  min-height: calc(100vh - 76px);
+  min-height: 0;
   padding: clamp(72px, 10vw, 132px) clamp(18px, 4vw, 56px) clamp(56px, 7vw, 92px);
   overflow: hidden;
 }
@@ -341,8 +389,8 @@ button {
 h1 {
   margin: 0;
   font-family: var(--headerFont);
-  font-size: clamp(56px, 10vw, 158px);
-  line-height: 0.88;
+  font-size: clamp(44px, 7.4vw, 118px);
+  line-height: 0.92;
 }
 
 .debutText,
@@ -412,70 +460,44 @@ h1 {
   background: rgba(253, 18, 103, 0.16);
 }
 
-.scrollBanner {
-  overflow: hidden;
-  border-top: 1px solid var(--pink);
-  border-bottom: 1px solid var(--pink);
-  background: var(--pink);
-}
-
-.scrollTrack {
-  display: flex;
-  width: max-content;
-  animation: scrollBanner 18s linear infinite;
-}
-
-.scrollTrack span {
-  flex: 0 0 auto;
-  padding: 15px 34px;
-  color: var(--black);
-  font-family: var(--headerFont);
-  font-size: clamp(16px, 2vw, 28px);
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.indexGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  padding: 0 clamp(18px, 4vw, 56px) clamp(48px, 6vw, 92px);
-}
-
-.indexTile {
-  min-height: 190px;
-  padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  background: rgba(255, 255, 255, 0.025);
-  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
-}
-
-.indexTile span {
-  font-family: var(--headerFont);
-  font-size: clamp(18px, 2.4vw, 34px);
-}
-
-.indexTile strong {
-  display: block;
-  margin-top: 54px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.indexTile:hover {
-  border-color: var(--pink);
-  background: rgba(253, 18, 103, 0.12);
-  transform: translateY(-4px);
-}
-
 .pageShell {
   min-height: calc(100vh - 161px);
-  padding: clamp(70px, 10vw, 138px) clamp(18px, 4vw, 56px) clamp(56px, 7vw, 100px);
+  padding: clamp(42px, 6vw, 88px) clamp(18px, 4vw, 56px) clamp(56px, 7vw, 100px);
 }
 
 .pageHero {
-  padding-bottom: clamp(34px, 6vw, 72px);
+  padding-bottom: clamp(24px, 4vw, 48px);
   border-bottom: 1px solid var(--line);
+}
+
+.profileIntro {
+  display: grid;
+  justify-items: center;
+  margin-top: clamp(28px, 5vw, 62px);
+  text-align: center;
+}
+
+.profileHeroImage {
+  display: block;
+  width: min(100%, 1120px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  object-fit: cover;
+  box-shadow: 0 30px 90px rgba(253, 18, 103, 0.16);
+}
+
+.profileLogo {
+  display: block;
+  width: clamp(170px, 22vw, 310px);
+  height: auto;
+  margin-top: clamp(34px, 5vw, 62px);
+}
+
+.profileIntro p {
+  max-width: 860px;
+  margin: clamp(28px, 4vw, 42px) auto 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(16px, 1.5vw, 22px);
+  line-height: 1.55;
 }
 
 .placeholderPanel,
@@ -487,7 +509,7 @@ h1 {
 }
 
 .legalShell h1 {
-  font-size: clamp(42px, 7vw, 112px);
+  font-size: clamp(38px, 6vw, 88px);
 }
 
 .releaseSection {
@@ -546,6 +568,31 @@ h1 {
   margin-top: 4px;
 }
 
+.memberReleaseSection {
+  margin-top: clamp(42px, 7vw, 96px);
+}
+
+.memberGrid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.memberCard {
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.memberCard:hover {
+  filter: saturate(112%) contrast(106%);
+  transform: translateY(-4px);
+}
+
+.memberArtwork {
+  aspect-ratio: 16 / 10;
+}
+
+.memberInfo h3 {
+  font-size: clamp(24px, 3.2vw, 40px);
+}
+
 .redirectShell {
   display: grid;
   min-height: 100vh;
@@ -600,16 +647,18 @@ h1 {
   color: var(--pink);
 }
 
-@keyframes scrollBanner {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 @media (max-width: 920px) {
+  body[data-page="home"] {
+    display: block;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  body[data-page="home"] main {
+    display: block;
+  }
+
   .siteHeader {
     grid-template-columns: 1fr auto;
     align-items: start;
@@ -632,6 +681,13 @@ h1 {
     flex-wrap: wrap;
     gap: 10px 18px;
     padding: 8px 0 0;
+  }
+
+  .socialNav {
+    grid-column: 1 / -1;
+    order: 4;
+    justify-self: start;
+    padding-top: 8px;
   }
 
   .languageSelector {
@@ -663,10 +719,6 @@ h1 {
   .heroSection {
     min-height: 720px;
   }
-
-  .indexGrid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 560px) {
@@ -685,7 +737,7 @@ h1 {
   }
 
   .pageHero h1 {
-    font-size: clamp(34px, 11vw, 44px);
+    font-size: clamp(30px, 10vw, 40px);
   }
 
   .actionRow {
